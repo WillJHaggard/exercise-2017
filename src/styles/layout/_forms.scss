@@ -1,0 +1,273 @@
+form {
+  fieldset {
+    border: none;
+    margin: 0 0 2rem 0;
+    padding: 0;
+    display: block;
+    clear: both;
+    @include respond-to('ns') {
+      margin: 0 0 1rem 0;
+    }
+  }
+  input {
+    &[type=submit] {
+      -webkit-appearance: none;
+      z-index: 30;
+      font-family: $font__main;
+      font-weight: normal;
+      font-style: normal;
+      @include transition(all, 150ms, (1,0,0,1));
+      border-radius: 0;
+      background: #00897b;
+      color: $color__white;
+      height: 4rem;
+      width: 100%;
+      max-width: 20rem;
+      min-width: 18rem;
+      display: block;
+      text-align: center;
+      @include line-height(4.05);
+      @include font-size(1.167);
+      clear: both;
+      margin: 0;
+      text-transform: uppercase;
+      cursor: pointer;
+      overflow: hidden;
+      border: none;
+      @include respond-to('ns') {
+        max-width: 100%;
+      }
+      &:hover,
+      &:focus {
+        background: $color__blk-9;
+        outline: none;
+      }
+    }
+    &[type=email],
+    &[type=text] {
+      border: none;
+      background: $color__white;
+      color: $color__blk-9;
+      width: 100%;
+      border-radius: 0;
+      -webkit-appearance: none;
+      box-shadow: none;
+      padding: 13px 15px 11px 15px;
+      font-family: $font__main;
+      font-weight: normal;
+      font-style: normal;
+      @include respond-to('ns') {
+        @include font-size(1.167);
+        @include line-height(1.667);
+      }
+    }
+  }
+  textarea {
+    border: none;
+    background: $color__white;
+    color: $color__blk-9;
+    width: 100%;
+    border-radius: 0;
+    -webkit-appearance: none;
+    box-shadow: none;
+    padding: 13px 15px 11px 15px;
+    font-family: $font__main;
+    font-weight: normal;
+    font-style: normal;
+    @include respond-to('ns') {
+      @include font-size(1.167);
+      @include line-height(1.667);
+    }
+  }
+  input {
+    &[type=email]::-webkit-input-placeholder,
+    &[type=text]::-webkit-input-placeholder {
+      color: $color__gray-70;
+    }
+  }
+  textarea::-webkit-input-placeholder {
+    color: $color__gray-70;
+  }
+  input {
+    &[type=email]:-moz-placeholder,
+    &[type=text]:-moz-placeholder {
+      color: $color__gray-70;
+      opacity: 1;
+    }
+  }
+  textarea:-moz-placeholder {
+    color: $color__gray-70;
+    opacity: 1;
+  }
+  input {
+    &[type=email]::-moz-placeholder,
+    &[type=text]::-moz-placeholder {
+      color: $color__gray-70;
+      opacity: 1;
+    }
+  }
+  textarea::-moz-placeholder {
+    color: $color__gray-70;
+    opacity: 1;
+  }
+  input {
+    &[type=email]:-ms-input-placeholder,
+    &[type=text]:-ms-input-placeholder {
+      color: $color__gray-70;
+    }
+  }
+  textarea:-ms-input-placeholder {
+    color: $color__gray-70;
+  }
+  input {
+    &[type=email]:focus,
+    &[type=text]:focus {
+      outline: none;
+      color: $color__white;
+      background: $color__blk-10;
+    }
+  }
+  textarea:focus {
+    outline: none;
+    color: $color__white;
+    background: $color__blk-10;
+  }
+  input {
+    &[type=email]:focus::-webkit-input-placeholder,
+    &[type=text]:focus::-webkit-input-placeholder {
+      color: $color__white;
+    }
+  }
+  textarea:focus::-webkit-input-placeholder {
+    color: $color__white;
+  }
+  input {
+    &[type=email]:focus:-moz-placeholder,
+    &[type=text]:focus:-moz-placeholder {
+      color: $color__white !important;
+      opacity: 1;
+    }
+  }
+  textarea:focus:-moz-placeholder {
+    color: $color__white !important;
+    opacity: 1;
+  }
+  input {
+    &[type=email]:focus::-moz-placeholder,
+    &[type=text]:focus::-moz-placeholder {
+      color: $color__white !important;
+      opacity: 1;
+    }
+  }
+  textarea:focus::-moz-placeholder {
+    color: $color__white !important;
+    opacity: 1;
+  }
+  input {
+    &[type=email]:focus:-ms-input-placeholder,
+    &[type=text]:focus:-ms-input-placeholder {
+      color: $color__white;
+    }
+  }
+  textarea:focus:-ms-input-placeholder {
+    color: $color__white;
+  }
+  input[type=checkbox],
+  label {
+    font-family: $font__main;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    vertical-align: middle;
+    @include font-size(1.333);
+    line-height: 1;
+    color: $color__white;
+    vertical-align: middle;
+  }
+  input[type=checkbox] {
+    margin-right: 0.5rem;
+  }
+  select {
+    font-family: $font__main;
+    font-weight: normal;
+    font-style: normal;
+    color: $color__blk-10;
+    background: $color__white;
+    &::-webkit-input-placeholder {
+      color: $color__gray-70;
+    }
+    &:-moz-placeholder,
+    &::-moz-placeholder {
+      color: $color__gray-70;
+      opacity: 1;
+    }
+    &:-ms-input-placeholder {
+      color: $color__gray-70;
+    }
+  }
+  textarea {
+    margin: 0;
+    overflow: hidden;
+    line-height: 1.4;
+  }
+  .fancy-select {
+    position: relative;
+    select {
+      text-shadow: none;
+      outline: none;
+      padding: 13px 15px 13px 15px;
+      color: $color__blk-9;
+      height: 4rem;
+      width: 100%;
+      border: none;
+      text-align: center;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      -webkit-border-radius: 0px;
+      border-radius: 0px;
+      &:focus {
+        outline: none;
+      }
+      select {
+        @include respond-to('ns') {
+          @include font-size(1.167);
+          @include line-height(1.667);
+        }
+      }
+      option {
+        text-shadow: none;
+      }
+      &::-ms-expand {
+        display: none;
+      }
+    }
+    &:after {
+      display: block;
+      height: 0;
+      width: 0;
+      border-top: 8px solid $color__blk-10;
+      border-right: 8px solid $color__tp;
+      border-left: 8px solid $color__tp;
+      content: "";
+      position: absolute;
+      top: 2rem;
+      right: 1.5rem;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+    }
+  }
+  .fieldset-split {
+    display: block;
+    clear: both;
+    width: 100%;
+    fieldset {
+      width: 49%;
+      float: left;
+      clear: none;
+      &:last-of-type {
+        float: right;
+      }
+    }
+  }
+}

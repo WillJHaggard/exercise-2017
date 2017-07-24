@@ -1,0 +1,154 @@
+.about {
+  position: relative;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background: $color__lusta;
+  color: $color__blk-10;
+  @include respond-to('l') {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  @include respond-to('m') {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  @include respond-to('ns') {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  @include respond-to('s') {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  &:after {
+    @include clearfix;
+    @include clearfix-after;
+  }
+  .wrap {
+    position: relative;
+  }
+  h3 {
+    @include font-size(2.5);
+    @include line-height(3);
+    @include respond-to('ns') {
+      @include font-size(2);
+      @include line-height(2);
+    }
+  }
+  .about-inner {
+    max-width: 48rem;
+    width: 49%;
+    float: left;
+    @include respond-to('ns') {
+      width: 100%;
+      float: none;
+      max-width: 100%;
+    }
+  }
+  blockquote {
+    position: relative;
+    max-width: 36rem;
+    width: 49%;
+    float: right;
+    height: 345px;
+    @include respond-to('ns') {
+      display: none;
+    }
+    p {
+      text-indent: -2rem;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      -moz-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      @include respond-to('m') {
+        text-indent: -1.5rem;
+      }
+    }
+  }
+}
+
+.centered-image {
+  position: relative;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background: $color__white;
+  @include respond-to('l') {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  @include respond-to('m') {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  @include respond-to('ns') {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  @include respond-to('s') {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  &:after {
+    @include clearfix;
+    @include clearfix-after;
+  }
+  figure {
+    max-width: 60rem;
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
+  }
+  &:after {
+    width: 100%;
+    height: 50%;
+    content: "";
+    display: block;
+    background: $color__lusta;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+}
+
+.centered-cta {
+  position: relative;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  padding-top: 0rem;
+  background: $color__white;
+  @include respond-to('l') {
+    padding-top: 0rem;
+    padding-bottom: 5rem;
+  }
+  @include respond-to('m') {
+    padding-top: 0rem;
+    padding-bottom: 4rem;
+  }
+  @include respond-to('ns') {
+    padding-top: 0rem;
+    padding-bottom: 3rem;
+  }
+  @include respond-to('s') {
+    padding-top: 0rem;
+    padding-bottom: 2rem;
+  }
+  &:after {
+    @include clearfix;
+    @include clearfix-after;
+  }
+  h3,
+  p {
+    text-align: center;
+    font-family: $font__main;
+    font-weight: normal;
+    font-style: normal;
+  }
+  .centered-cta-inner {
+    max-width: 44rem;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,269 @@
+.results-section {
+  position: relative;
+  background: $color__white;
+  &:after {
+    @include clearfix;
+    @include clearfix-after;
+  }
+  form input[type=submit][disabled=disabled] {
+    background-color: $color__gray;
+  }
+  .filter-courses {
+    background: $color__tp;
+    z-index: 20;
+    position: relative;
+    width: 100%;
+    display: block;
+    -webkit-backface-visiblity: hidden;
+    &:after {
+      @include clearfix;
+      @include clearfix-after;
+    }
+  }
+  .filter-wrap {
+    position: relative;
+    margin-top: -5rem;
+    @include respond-to('ns') {
+      display: block;
+      margin-top: 0;
+    }
+  }
+  .search {
+    background: $color__gray--bg;
+    padding: 3rem 6rem 1rem 6rem;
+    text-justify: distribute-all-lines;
+    text-align: justify;
+    @include respond-to('l') {
+      padding: 3rem 3rem 1rem 3rem;
+    }
+    @include respond-to('ns') {
+      padding: 3rem 10% 1rem 10%;
+    }
+    &:after {
+      @include clearfix;
+      @include clearfix-after;
+      content: " ";
+      display: inline-block;
+      width: 100%;
+      height: 0;
+      font-size: 0;
+      line-height: 0;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    fieldset {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: top;
+      width: 37%;
+      clear: none;
+      @include respond-to('l') {
+        width: 35%;
+      }
+      @include respond-to('m-portrait') {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      @media only screen and (max-width: 767px) and (orientation: landscape) {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      &:last-of-type {
+        max-width: 20%;
+        width: 20%;
+        @include respond-to('m-portrait') {
+          margin-bottom: 0rem;
+        }
+      }
+    }
+  }
+  .courses-filter {
+    background: $color__white;
+    @include respond-to('ns') {
+      max-width: 120rem;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+    }
+    &:after {
+      @include clearfix;
+      @include clearfix-after;
+    }
+    .col {
+      width: 32.0%;
+      float: left;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      border-left: 1px solid #ccc;
+      padding-left: 1rem;
+      margin-right: 2%;
+      @include respond-to('l') {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+      @include respond-to('m') {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+      @include respond-to('ns') {
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 100%;
+        border-left: none;
+        height: auto;
+        border-bottom: 1px solid $color__gray-70;
+        padding: 1rem 0;
+      }
+      @include respond-to('ns') {
+      }
+      @include respond-to('s') {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+      .category {
+        .category-filter,
+        .type-filter,
+        .product-type-filter {
+          height: 204px;
+        }
+      }
+      h4 {
+        margin: 0 0 1rem 0;
+        @include respond-to('ns') {
+          margin: 0 0 0.5rem 0;
+        }
+      }
+      &:first-of-type {
+        @include respond-to('ns') {
+          padding-top: 2rem;
+        }
+      }
+      &:last-of-type {
+        margin-right: 0;
+        margin-bottom: 2rem;
+        @include respond-to('ns') {
+          padding-bottom: 1rem;
+        }
+      }
+    }
+    input[type=checkbox],
+    label {
+      color: $color__blk-10;
+    }
+    fieldset {
+      margin-bottom: 0.5rem;
+      @include respond-to('ns') {
+        margin: 0 0 0rem 0;
+      }
+    }
+  }
+  .courses-results {
+    h2 {
+      @include font-size(1.667);
+      @include line-height(2);
+      text-align: center;
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      @include respond-to('l') {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+      }
+      @include respond-to('m') {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+      }
+      @include respond-to('ns') {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+      @include respond-to('s') {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+    .courses-grid {
+      border-top: 1px solid $color__gray-70;
+      display: none;
+      .result {
+        border-bottom: 1px solid $color__gray-70;
+        padding: 2rem 0;
+        &:after {
+          @include clearfix;
+          @include clearfix-after;
+        }
+        p {
+          font-size: 1.167rem;
+          line-height: 2rem;
+          @include respond-to('ns') {
+            font-family: $font__main;
+            font-weight: normal;
+            font-style: normal;
+          }
+        }
+        a {
+          font-size: 1.167rem;
+          line-height: 2rem;
+          border-bottom: 1px solid $color__gray-70;
+          &:hover {
+            border-bottom: none;
+          }
+        }
+        .course-name {
+          width: 32%;
+          margin-right: 2%;
+          float: left;
+          @include respond-to('ns') {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 1rem;
+            float: none;
+          }
+          p {
+            margin-bottom: 0;
+          }
+        }
+        .course-type {
+          width: 32%;
+          margin-right: 2%;
+          float: left;
+          @include respond-to('ns') {
+            width: 49%;
+            margin-right: 2%;
+          }
+        }
+        .course-details {
+          width: 32%;
+          margin-right: 0%;
+          float: left;
+          @include respond-to('ns') {
+            width: 49%;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    .button {
+      margin-top: 6rem;
+      margin-bottom: 6rem;
+      @include respond-to('l') {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+      }
+      @include respond-to('m') {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+      }
+      @include respond-to('ns') {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+      }
+      @include respond-to('s') {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

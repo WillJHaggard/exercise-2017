@@ -1,0 +1,178 @@
+.hero {
+  height: 78rem;
+  display: block;
+  width: 100%;
+  background-position: top top;
+  background-repeat: no-repeat;
+  background-image: url('../assets/img/hero.jpg');
+  @include background-cover;
+  position: relative;
+  z-index: 1;
+  background-color: $color__lusta;
+  @include respond-to('xl') {
+    height: 90rem;
+  }
+  @include respond-to('l') {
+    height: 60rem;
+    height: 100vh;
+  }
+  @include respond-to('m') {
+    height: 65rem;
+  }
+  @include respond-to('ns') {
+    height: 50rem;
+  }
+  @include respond-to('s') {
+    height: 50rem;
+  }
+  hgroup {
+    @include respond-to('l') {
+      margin-top: 0rem;
+    }
+    h1 {
+      padding: 1rem 0 1.5rem 0;
+      text-align: center;
+      font-family: $font__reg;
+      color: $color__white;
+      @include respond-to('m') {
+        margin: 0 0 2rem 0;
+        letter-spacing: -2px;
+      }
+      @include respond-to('l') {
+        margin: 0;
+        width: 100%;
+        margin-bottom: 3rem;
+      }
+      @include respond-to('ns') {
+        margin: 0;
+      }
+      @include respond-to('s') {
+        margin: 0;
+      }
+    }
+    h2 {
+      text-align: center;
+      margin: 0 auto;
+      font-family: $font__reg;
+      color: $color__white;
+      @include respond-to('xl') {
+        @include font-size(2);
+        @include line-height(2.5);
+      }
+      @include respond-to('l') {
+        margin: 0 auto;
+      }
+      @include respond-to('m') {
+        margin: 0 auto;
+      }
+      @include respond-to('ns') {
+        margin: 0;
+        max-width: 100%;
+        @include font-size(1.5);
+        @include line-height(2);
+      }
+      @include respond-to('s') {
+        margin: 0;
+      }
+    }
+  }
+  .wrap {
+    height: 78rem;
+    position: relative;
+    @include respond-to('xl') {
+      height: 90rem;
+    }
+    @include respond-to('l') {
+      max-width: 80%;
+      height: 60rem;
+      height: 100vh;
+    }
+    @include respond-to('m') {
+      height: 65rem;
+    }
+    @include respond-to('ns') {
+      max-width: 80%;
+      width: 80%;
+    }
+    @include respond-to('ns') {
+      height: 53rem;
+    }
+    @include respond-to('s') {
+      height: 53rem;
+    }
+  }
+  &:before {
+    content: "";
+    width: 100%;
+    height: 26rem;
+    background-image: url("../assets/img/header-gradient.png");
+    background-repeat: repeat-x;
+    background-position: top left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+  h1 {
+    margin-top: 0rem;
+    margin-right: 0rem;
+    margin-bottom: 0rem;
+    margin-left: 0rem;
+    color: $color__white;
+  }
+  h2 {
+    margin-top: 0rem;
+    margin-right: 0rem;
+    margin-bottom: 0rem;
+    margin-left: 0rem;
+    color: $color__white;
+    font-size: 1.5rem;
+    @include line-height(2);
+    max-width: 60rem;
+    letter-spacing: 0;
+  }
+  h1 {
+    width: 100%;
+    margin-bottom: 3rem;
+    text-rendering: auto;
+  }
+  hgroup {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    z-index: 10;
+    width: 100%;
+    margin-top: 2rem;
+    &:after {
+      @include clearfix;
+      @include clearfix-after;
+    }
+  }
+  span {
+    position: absolute;
+    left: 50%;
+    bottom: 8rem;
+    transform: translate(-50%, 0);
+    display: block;
+    cursor: pointer;
+    @include respond-to('l') {
+      bottom: 6rem;
+    }
+    @include respond-to('ns') {
+      display: none;
+    }
+    &:before {
+      font-family: 'icon', sans-serif;
+      font-weight: bold;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      content: "\e602";
+      color: $color__white;
+      font-size: 2.5rem;
+    }
+  }
+}

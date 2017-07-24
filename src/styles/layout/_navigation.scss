@@ -1,0 +1,189 @@
+.main-navigation {
+  text-transform: lowercase;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  padding-bottom: 0rem;
+  max-width: 120rem;
+  margin: 0 auto;
+  width: 80%;
+  -webkit-font-smoothing: initial;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  height: 17rem;
+  @include respond-to('xl') {
+    max-width: 120rem;
+  }
+  @include respond-to('l-m') {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  @include respond-to('l-ns') {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  @include respond-to('l-s') {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  @include respond-to('l') {
+    max-width: 80%;
+    height: 12rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  @include respond-to('m-portrait') {
+    max-width: 120rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+  @include respond-to('m') {
+    max-width: 80%;
+    width: 80%;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  @include respond-to('ns') {
+    max-width: 80%;
+    width: 80%;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    height: 8rem;
+  }
+  @include respond-to('s') {
+    padding-top: 2rem;
+    padding-bottom: 0rem;
+  }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .top-nav {
+    height: 16rem;
+    @include respond-to('l') {
+      height: 12rem;
+      padding-bottom: 0rem;
+    }
+  }
+  a {
+    text-align: left;
+    color: $color__white;
+    font-family: $font__reg;
+    position: relative;
+    @include line-height(3.43);
+    &:after {
+      content: "";
+      width: 100%;
+      background: $color__tp;
+      height: 2px;
+      display: inline-block;
+      position: absolute;
+      bottom: -0.25rem;
+      left: 0;
+    }
+    &:hover:after {
+      background: $color__white;
+    }
+  }
+  li:hover > a:after {
+    background: $color__white;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    li {
+      padding: 0;
+      margin: 0;
+      width: 20%;
+      float: left;
+      display: block;
+      position: relative;
+      cursor: pointer;
+      @include respond-to('ns') {
+        width: 40%;
+      }
+      &:last-of-type,
+      &:nth-last-child(2) {
+        text-align: right;
+      }
+      &.logotype {
+        margin-top: 7px;
+        text-align: center;
+        pointer-events: none;
+        a {
+          background-image: url('../assets/img/flourish.svg');
+          color: $color__tp;
+          font-size: 1px;
+          background-repeat: no-repeat;
+          background-position: center center;
+          width: 100%;
+          height: 100%;
+          display: block;
+          @include respond-to('m') {
+            background-size: contain;
+            max-width: 10rem;
+            margin: 0 auto;
+          }
+          &:after {
+            content: none;
+          }
+        }
+      }
+      .sub-nav {
+        padding: 2rem 0 2rem 0;
+        text-align: left;
+        opacity: 0;
+        margin-top: 6rem;
+        margin-bottom: 6rem;
+        margin-bottom: 0rem;
+        display: none;
+        @include respond-to('l') {
+          padding: 1rem 0 0rem 0;
+          margin-top: 5rem;
+          margin-bottom: 0rem;
+        }
+        @include respond-to('m') {
+          margin-top: 4rem;
+          margin-bottom: 0rem;
+        }
+        @include respond-to('ns') {
+          margin-top: 4rem;
+          margin-bottom: 0rem;
+        }
+        @include respond-to('s') {
+          margin-top: 3rem;
+          margin-bottom: 0rem;
+        }
+        li {
+          margin: 0;
+          padding: 0;
+          display: block;
+          text-align: left;
+          float: none;
+          height: auto;
+          line-height: 1;
+          margin-bottom: 1rem;
+          width: auto;
+          a {
+            line-height: 1;
+            &:hover:after {
+              background: $color__white;
+            }
+          }
+        }
+      }
+      &.menu-trigger a {
+        cursor: pointer;
+      }
+    }
+  }
+}

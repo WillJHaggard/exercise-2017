@@ -1,0 +1,9 @@
+{
+  "navigation": [
+    { "selector": ".down-arrow", "id": "#da-start" },
+    { "selector": ".contact-wp", "id": "#contact-start" },
+    { "selector": ".faq-wp", "id": "#faq-start" },
+    { "selector": ".about-wp", "id": "#about-start" },
+    { "selector": ".catalog-wp", "id": "#catalog-start" }
+  ]
+}

@@ -1,0 +1,141 @@
+footer {
+  background: $color__pgreen;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  @include respond-to('l') {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  @include respond-to('m') {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  @include respond-to('ns') {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  @include respond-to('s') {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  &:after {
+    @include clearfix;
+    @include clearfix-after;
+  }
+
+  h3 {
+    color: $color__white;
+    @include font-size(3);
+    @include line-height(4);
+    @include respond-to('m') {
+      @include font-size(2.5);
+      @include line-height(3);
+    }
+  }
+  legend {
+    color: $color__white;
+    @include font-size(1.333);
+    @include line-height(2);
+    font-family: $font__main;
+    font-weight: normal;
+    font-style: normal;
+    margin-bottom: 2rem;
+    @include respond-to('ns') {
+      display: none;
+    }
+  }
+  .newsletter {
+    &:after {
+      @include clearfix;
+      @include clearfix-after;
+    }
+    h3 {
+      width: 50%;
+      float: left;
+      @include respond-to('ns') {
+        width: 100%;
+        float: none;
+        @include font-size(2);
+        @include line-height(2.5);
+      }
+    }
+    form {
+      float: right;
+      width: 50%;
+      padding-left: 1%;
+      @include respond-to('ns') {
+        width: 100%;
+        float: none;
+      }
+      fieldset {
+        max-width: 30rem;
+        margin: 0 0 1rem 0;
+      }
+    }
+  }
+
+  .footer-links {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    @include respond-to('l') {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+    @include respond-to('m') {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+    @include respond-to('ns') {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+    @include respond-to('s') {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    &:after {
+      @include clearfix;
+      @include clearfix-after;
+    }
+    a {
+      &:after {
+        content: '';
+        width: 100%;
+        display: inline-block;
+        height: 2px;
+        position: absolute;
+        bottom: -0.5rem;
+        left: 0;
+        background: $color__tp;
+        @include transition(all, 150ms, (1,0,0,1));
+      }
+      &:hover:after {
+        background: #00897b;
+      }
+    }
+  }
+  .col {
+    float: left;
+    width: 23.5%;
+    margin-right: 2%;
+    @include respond-to('ns') {
+      width: 49%;
+      &:first-of-type,
+      &:last-of-type,
+      &:nth-of-type(3) {
+        display: none;
+      }
+    }
+    &:last-of-type {
+      margin-right: 0;
+    }
+    p,
+    a {
+      color: $color__white;
+      @include respond-to('m') {
+        @include font-size(1.167);
+        @include line-height(1.667);
+      }
+    }
+  }
+}

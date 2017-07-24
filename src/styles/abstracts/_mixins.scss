@@ -1,0 +1,117 @@
+/// String Replace Function
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+
+/// font-face
+/// credit: https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+  $extmods: (eot: "", svg: "#" + str-replace($name, " ", "_"));
+  $formats: (otf: "opentype", ttf: "truetype");
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+  }
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+/// Simple BP Manager a la bootstrap3.x
+@mixin respond-to($media) {
+  @if $media == 's' {
+    @media only screen and (max-width: $s) {
+      @content;
+    }
+  } @else if $media == 'ns' {
+    @media only screen and (max-width: $ns) {
+      @content;
+    }
+  } @else if $media == 'm' {
+    @media only screen and (max-width: $m) {
+      @content;
+    }
+  } @else if $media == 'l' {
+    @media only screen and (max-width: $l) {
+      @content;
+    }
+  } @else if $media == 'xl' {
+    @media only screen and (max-width: $xl) {
+      @content;
+    }
+  } @else if $media == 'l-m' {
+    @media only screen and (max-width: $l) and (max-width: $m) {
+      @content;
+    }
+  } @else if $media == 'l-s' {
+    @media only screen and (max-width: $l) and (max-width: $s) {
+      @content;
+    }
+  } @else if $media == 'l-ns' {
+    @media only screen and (max-width: $l) and (max-width: $ns) {
+      @content;
+    }
+  } @else if $media == 'm-portrait' {
+    @media only screen and (max-width: $m) and (orientation: portrait) {
+      @content;
+    }
+  }
+}
+
+/// rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+  font-size: ($sizeValue * 16) * 1px;
+  font-size: $sizeValue * 1rem;
+}
+
+/// rem output with unitless fallback
+@mixin line-height($sizeValue: 1) {
+  line-height: $sizeValue;
+  line-height: $sizeValue * 1rem;
+}
+
+/// clearfix
+@mixin clearfix {
+  content: "";
+  display: table;
+}
+
+/// clear after
+@mixin clearfix-after {
+  clear: both;
+}
+
+/// cover
+@mixin background-cover {
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+// transitions
+@mixin transition($all: all, $ms: 150ms, $cb: (0,0,0,0)) {
+  -webkit-transition: $all $ms cubic-bezier($cb);
+  -moz-transition: $all $ms cubic-bezier($cb);
+  -ms-transition: $all $ms cubic-bezier($cb);
+  -o-transition: $all $ms cubic-bezier($cb);
+  transition: $all $ms cubic-bezier($cb);
+}
+
+// transition-delay
+@mixin delay($s: 0s) {
+  -webkit-transition-delay: $s;
+  -moz-transition-delay: $s;
+  -o-transition-delay: $s;
+  -ms-transition-delay: $s;
+  transition-delay: $s;
+}

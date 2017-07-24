@@ -1,0 +1,27 @@
+.main-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+  background: $color__tp;
+  @include respond-to('ns') {
+    display: none;
+  }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+    background: $color__tp;
+    width: 100%;
+    height: 1px;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 16rem;
+    left: 0;
+    z-index: 20;
+    @include respond-to('l') {
+      top: 11rem;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+.faq {
+  background: $color__white;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  @include respond-to('l') {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  @include respond-to('m') {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  @include respond-to('ns') {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  @include respond-to('s') {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  &:after {
+    @include clearfix;
+    @include clearfix-after;
+  }
+  .row {
+    width: 100%;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    @include respond-to('l') {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+    @include respond-to('m') {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+    @include respond-to('ns') {
+      padding: 0;
+    }
+    @include respond-to('s') {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    &:last-of-type {
+      @include respond-to('ns') {
+        margin-bottom: 4rem;
+      }
+    }
+    &:after {
+      @include clearfix;
+      @include clearfix-after;
+    }
+  }
+  .question {
+    @include transition(all, 150ms, (1,0,0,1));
+    color: $color__blk-10;
+    width: 32.0%;
+    padding-left: 2%;
+    display: block;
+    float: left;
+    padding-bottom: 1rem;
+    font-size: 1.333rem;
+    @include line-height(2);
+    border-bottom: 1px solid #ccc;
+    @include respond-to('ns') {
+      width: 100%;
+      padding: 1rem 0;
+      float: none;
+    }
+    &:hover {
+      border-color: $color__tp;
+    }
+    &:first-of-type {
+      padding-left: 0;
+    }
+  }
+  .button {
+    margin: 3rem auto;
+    @include respond-to('ns') {
+      margin: 2rem auto;
+      min-width: 100%;
+    }
+    @include respond-to('s') {
+      margin: 1rem auto;
+    }
+  }
+}

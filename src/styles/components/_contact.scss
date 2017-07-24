@@ -1,0 +1,142 @@
+.contact-section {
+  background: $color__blk--bg;
+  // margin-top: 2.2rem;
+  padding-top: 6rem;
+  padding-bottom: 0rem;
+  @include respond-to('l') {
+    padding-top: 5rem;
+    padding-bottom: 0rem;
+  }
+  @include respond-to('m') {
+    padding-top: 4rem;
+    padding-bottom: 0rem;
+  }
+  @include respond-to('ns') {
+    padding-top: 3rem;
+    padding-bottom: 0rem;
+  }
+  @include respond-to('s') {
+    padding-top: 2rem;
+    padding-bottom: 0rem;
+  }
+  &:after {
+    @include clearfix;
+    @include clearfix-after;
+  }
+  .contact-left {
+    width: 49%;
+    float: left;
+    @include respond-to('ns') {
+      width: 100%;
+      float: none;
+    }
+    figure {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+      @include respond-to('m') {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+      }
+      @include respond-to('l') {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+      }
+      @include respond-to('ns') {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+      }
+      @include respond-to('s') {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  .contact-right {
+    width: 49%;
+    float: right;
+    @include respond-to('ns') {
+      width: 100%;
+      float: none;
+      margin-bottom: 4rem;
+    }
+    form {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+      @include respond-to('m') {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+      }
+      @include respond-to('l') {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+      }
+      @include respond-to('ns') {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+      }
+      @include respond-to('s') {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  h4 {
+    @include line-height(2);
+    margin-top: 0;
+  }
+  p,
+  a,
+  h4,
+  h5 {
+    color: $color__white;
+    font-family: $font__main;
+    font-weight: normal;
+    font-style: normal;
+  }
+  a[href^="mailto"] {
+    word-wrap: break-word;
+  }
+}
+
+.contact-info {
+  &:after {
+    @include clearfix;
+    @include clearfix-after;
+  }
+  .contact-info-left {
+    float: left;
+    width: 48%;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    padding-top: 0rem;
+    @include respond-to('l') {
+      padding-top: 0rem;
+    }
+    @include respond-to('ns') {
+      padding-top: 0rem;
+      padding-bottom: 2rem;
+    }
+    @include respond-to('s') {
+      padding-top: 0rem;
+      padding-bottom: 2rem;
+    }
+  }
+  .contact-info-right {
+    float: right;
+    width: 48%;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    padding-top: 0rem;
+    @include respond-to('l') {
+      padding-top: 0rem;
+    }
+    @include respond-to('ns') {
+      padding-top: 0rem;
+      padding-bottom: 2rem;
+    }
+    @include respond-to('s') {
+      padding-top: 0rem;
+      padding-bottom: 2rem;
+    }
+  }
+}

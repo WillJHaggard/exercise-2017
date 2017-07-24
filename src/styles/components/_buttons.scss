@@ -1,0 +1,61 @@
+button {
+  font-family: $font__main;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.button {
+  background: $color__blk-9;
+  color: $color__white;
+  height: 4rem;
+  width: 100%;
+  max-width: 20rem;
+  min-width: 18rem;
+  display: block;
+  text-align: center;
+  @include line-height(4.25);
+  @include font-size(1.167);
+  clear: both;
+  margin: 0 auto;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  @include respond-to('ns') {
+    max-width: 80%;
+  }
+  &:before {
+    @include transition(all, 150ms, (1,0,0,1));
+    content: "";
+    width: 100%;
+    height: 4rem;
+    background: $color__pgreen;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+  }
+  &:hover:before {
+    width: 100%;
+    opacity: 1;
+  }
+  b {
+    font-weight: normal;
+    position: relative;
+    z-index: 2;
+    color: $color__white;
+  }
+  &:after {
+    font-family: $font__icon;
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    @include font-size(1);
+    margin-left: 1rem;
+    position: relative;
+    z-index: 2;
+    content: "\e604";
+    color: $color__white;
+  }
+}

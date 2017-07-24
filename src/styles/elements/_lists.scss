@@ -1,0 +1,13 @@
+ul {
+  @include font-size(1.333);
+  @include line-height(2);
+  margin: 2rem 0 1.5rem 0;
+  padding-left: 2rem;
+  color: $color__blk-9;
+  @include respond-to('m') {
+    @include line-height(1.667);
+  }
+  li {
+    margin-bottom: 1rem;
+  }
+}

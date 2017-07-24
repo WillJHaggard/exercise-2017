@@ -1,0 +1,24 @@
+.spinner {
+  z-index: 350;
+  margin: -1.5rem 0 0 -1.5rem;
+  height: 3rem;
+  width: 3rem;
+  animation: rotate 0.5s infinite linear;
+  border: 0.5rem solid #fff;
+  border-right-color: transparent;
+  border-radius: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: block;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

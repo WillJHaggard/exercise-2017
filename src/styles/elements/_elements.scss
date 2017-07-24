@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+  &:after,
+  &::before {
+    box-sizing: border-box;
+  }
+}
+
+html {
+  font-size: 75%;
+  font-family: $font__reg;
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body {
+  @include font-size(1);
+  background: $color__lusta;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body,
+p,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+input,
+select,
+textarea {
+  font-family: $font__reg;
+  @include font-size(1.333);
+  @include line-height(2);
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  @include respond-to('m') {
+    font-weight: normal;
+  }
+}
+
+input,
+select,
+textarea {
+  font-family: $font__reg;
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  color: $color__blk-9;
+}
+
+p {
+  margin: 0 0 1.5rem 0;
+  @include font-size(1.333);
+  @include line-height(2);
+}
+
+h1 {
+  @include font-size(9);
+  @include line-height(8);
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+  @include respond-to('l') {
+    @include font-size(8);
+    @include line-height(7);
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+  @include respond-to('m') {
+    font-family: $font__main;
+    font-weight: normal;
+    font-style: normal;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+  @include respond-to('ns') {
+    @include font-size(4.5);
+    @include line-height(4.5);
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  @include respond-to('s') {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+h2 {
+  @include font-size(4);
+  @include font-size(4.5);
+  margin: 0;
+  padding: 0;
+  @include respond-to('m') {
+    @include font-size(2.5);
+    @include line-height(3);
+  }
+  @include respond-to('l') {
+    @include font-size(3);
+    @include line-height(3.5);
+  }
+  @include respond-to('ns') {
+    @include font-size(2);
+    @include line-height(2.5);
+    text-align: center;
+  }
+}
+
+h3 {
+  @include font-size(2);
+  @include line-height(2.5);
+  margin-bottom: 2rem;
+  margin-top: 0rem;
+  @include respond-to('m') {
+    @include font-size(1.667);
+    @include line-height(2);
+  }
+  @include respond-to('ns') {
+    @include font-size(1.333);
+    @include line-height(1.667);
+  }
+}
+
+h4 {
+  @include font-size(1.667);
+  @include line-height(2.5);
+  margin-bottom: 0rem;
+  margin-top: 2rem;
+}
+
+h5 {
+  @include font-size(1.333);
+  @include line-height(2);
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  color: $color__blk-9;
+  text-decoration: none;
+  -webkit-tap-highlight-color: $color__tp;
+  text-decoration: none;
+  outline: none;
+  position: relative;
+  &:hover {
+    border-color: $color__tp;
+  }
+}
+
+blockquote {
+  font-family: 'brown-bold', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+blockquote p {
+  font-size: 3.5rem;
+  line-height: 4rem;
+  font-family: 'brown-bold', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  @include respond-to('m') {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+}

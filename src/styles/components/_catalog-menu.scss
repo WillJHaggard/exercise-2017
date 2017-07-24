@@ -1,0 +1,221 @@
+/// collection of courses menu (WIP)
+
+.catalog-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background: url('https://unsplash.it/1440/800/?random') no-repeat 0 0;
+  @include background-cover;
+  display: none;
+  @include respond-to('xl') {
+    //background: url("../img/catalog-menu-large.jpg") no-repeat 0 0;
+    background-size: cover;
+  }
+  @include respond-to('l') {
+    //background: url("../img/catalog-menu.jpg") no-repeat 0 0;
+    background-size: cover;
+  }
+  @include respond-to('m') {
+    //background: url("../img/catalog-menu-tablet.jpg") no-repeat 0 0;
+    background-size: cover;
+  }
+  @include respond-to('ns') {
+    //background: url("../img/catalog-menu-mobile.jpg") no-repeat 0 0;
+    background-size: cover;
+    display: none;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-family: $font__main;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: lowercase;
+    position: absolute;
+    top: 50%;
+    -moz-transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+    -webkit-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+    li {
+      margin: 0;
+      padding: 0;
+      -webkit-transform: translate3d(0, 600%, 0);
+      transform: translate3d(0, 600%, 0);
+      opacity: 0;
+      @include transition(all, 650ms, (0.19,1,0.22,1));
+      a {
+        color: $color__white;
+        font-size: 5.5rem;
+        @include line-height(6.5);
+        letter-spacing: -0.175rem;
+        position: relative;
+        @include respond-to('xl') {
+          @include font-size(6.5);
+          @include line-height(7);
+        }
+        @include respond-to('l') {
+          @include font-size(5);
+          @include line-height(6);
+        }
+        @include respond-to('m-portrait') {
+          @include font-size(4.5);
+          @include line-height(5.5);
+        }
+        @include respond-to('m') {
+          @include font-size(4);
+          @include line-height(5);
+        }
+        &:after {
+          content: "";
+          width: 0%;
+          background: $color__white;
+          height: 6px;
+          position: absolute;
+          top: 55%;
+          left: 0;
+          @include transition(all, 250ms, (0.19,1,0.22,1));
+        }
+        &:hover:after {
+          width: 100%;
+        }
+      }
+      &:nth-of-type(1) {
+        @include delay(0);
+      }
+      &:nth-of-type(2) {
+        @include delay(0.05s);
+      }
+      &:nth-of-type(3) {
+        @include delay(0.06s);
+      }
+      &:nth-of-type(4) {
+        @include delay(0.07s);
+      }
+      &:nth-of-type(5) {
+        @include delay(0.08s);
+      }
+    }
+  }
+  .wrap:after {
+    @include clearfix;
+    @include clearfix-after;
+  }
+  .close-menu {
+    position: absolute;
+    top: 6rem;
+    cursor: pointer;
+    display: block;
+    z-index: 150;
+    width: 4.5rem;
+    height: 4.5rem;
+    opacity: 0;
+    @include respond-to('l') {
+      top: 2.5rem;
+    }
+    span {
+      margin: 0;
+      width: 40px;
+      &:before,
+      &:after {
+        position: absolute;
+        content: '';
+        top: 2rem;
+      }
+      &:before,
+      &:after {
+        width: 4.5rem;
+        height: 4px;
+        background-color: $color__white;
+        display: block;
+      }
+      &:before {
+        margin-top: 0;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      &:after {
+        margin-top: 0;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+    }
+    &:hover span {
+      &:before,
+      &:after {
+        background-color: $color__pgreen;
+      }
+    }
+  }
+  .hr {
+    width: 100%;
+    height: 1px;
+    background: $color__blk-10;
+    position: absolute;
+    top: 16.5rem;
+    @include respond-to('l') {
+      top: 9.5rem;
+    }
+  }
+  .teasers-menu {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -webkit-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+    width: 50%;
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    p,
+    a {
+      color: $color__white;
+    }
+    p {
+      width: 23.5%;
+      @include line-height(2);
+      font-family: $font__main;
+      font-weight: normal;
+      font-style: normal;
+      float: left;
+      opacity: 0;
+      @include respond-to('m-portrait') {
+        width: 50%;
+        &:first-of-type {
+          width: 50%;
+          margin-bottom: 4rem;
+        }
+      }
+      @include respond-to('m') {
+        width: 33.5%;
+        &:first-of-type {
+          width: 23.5%;
+        }
+      }
+      &:first-of-type {
+        margin-right: 2rem;
+      }
+    }
+    a {
+      position: relative;
+      display: block;
+      &:after {
+        content: '';
+        width: 100%;
+        background: $color__white;
+        height: 2px;
+        position: absolute;
+        bottom: -1rem;
+        left: 0;
+      }
+    }
+  }
+}
